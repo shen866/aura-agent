@@ -105,6 +105,12 @@ export async function runChatLoop(options: ChatLoopOptions): Promise<void> {
           }
           io.output(`${C.gray}  🔧 准备调用工具...${C.reset}`);
         }
+      } else if (chunk.type === "error") {
+        if (isFirstChunk) {
+          stopLoading();
+          isFirstChunk = false;
+        }
+        io.output(`${C.brightYellow}⚠️ ${chunk.delta}${C.reset}`);
       }
     }
     io.output(`${C.reset}`);

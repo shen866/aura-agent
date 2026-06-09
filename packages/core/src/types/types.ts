@@ -58,6 +58,7 @@ export interface AgentEvents {
   onToolCallStart?: (toolCall: ToolCall) => void;
   onToolCallEnd?: (toolCall: ToolCall, result: string) => void;
   onToolCallError?: (toolCall: ToolCall, error: Error) => void;
+  onLLMError?: (error: Error) => void;
   onSkillMatch?: (skills: MatchedSkill[]) => void;
 }
 

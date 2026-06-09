@@ -58,33 +58,38 @@ export class OpenAIProvider implements Provider {
       }
     }
 
-    const stream = await this.client.chat.completions.create(requestOptions);
+    try {
+      const stream = await this.client.chat.completions.create(requestOptions);
 
-    for await (const chunk of stream) {
-      const delta = chunk.choices[0]?.delta;
+      for await (const chunk of stream) {
+        const delta = chunk.choices[0]?.delta;
 
-      if (delta?.content) {
-        yield { type: "content", delta: delta.content };
-      }
+        if (delta?.content) {
+          yield { type: "content", delta: delta.content };
+        }
 
-      if (delta?.reasoning_content) {
-        yield { type: "reasoning", delta: delta.reasoning_content };
-      }
+        if (delta?.reasoning_content) {
+          yield { type: "reasoning", delta: delta.reasoning_content };
+        }
 
-      if (delta?.tool_calls) {
-        for (const tc of delta.tool_calls) {
-          yield {
-            type: "tool_call",
-            delta: "",
-            toolCall: {
-              index: tc.index ?? 0,
-              id: tc.id,
-              name: tc.function?.name,
-              arguments: tc.function?.arguments,
-            },
-          };
+        if (delta?.tool_calls) {
+          for (const tc of delta.tool_calls) {
+            yield {
+              type: "tool_call",
+              delta: "",
+              toolCall: {
+                index: tc.index ?? 0,
+                id: tc.id,
+                name: tc.function?.name,
+                arguments: tc.function?.arguments,
+              },
+            };
+          }
         }
       }
+    } catch (error: any) {
+      const message = error?.message || String(error);
+      yield { type: "error", delta: `[LLM API 错误] ${message}` };
     }
   }
 }

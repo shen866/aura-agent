@@ -176,92 +176,107 @@ export class Agent {
       events?.onIterationStart?.(iteration, messages);
 
       const apiMessages = await this.buildMessagesWithSkills(userQuery, events);
+      try {
+        const stream = this.provider.chatStream({
+          model: this.model,
+          messages: apiMessages,
+          tools: this.tools.getToolSchemas(),
+          ...(options ? { options } : {}),
+        });
 
-      const stream = this.provider.chatStream({
-        model: this.model,
-        messages: apiMessages,
-        tools: this.tools.getToolSchemas(),
-        ...(options ? { options } : {}),
-      });
+        let content = "";
+        let reasoningContent = "";
+        const toolCalls: ToolCall[] = [];
+        let hasToolCall = false;
+        let hasError = false;
 
-      let content = "";
-      let reasoningContent = "";
-      const toolCalls: ToolCall[] = [];
-      let hasToolCall = false;
-
-      for await (const chunk of stream) {
-        if (chunk.type === "content") {
-          content += chunk.delta;
-          events?.onContentChunk?.(chunk.delta);
-          yield chunk;
-        } else if (chunk.type === "reasoning") {
-          reasoningContent += chunk.delta;
-          events?.onReasoningChunk?.(chunk.delta);
-          yield chunk;
-        } else if (chunk.type === "tool_call") {
-          hasToolCall = true;
-          const { index, id, name, arguments: args } = chunk.toolCall!;
-          if (!toolCalls[index]) {
-            toolCalls[index] = {
-              id: "",
-              type: "function",
-              function: { name: "", arguments: "" },
-            };
+        for await (const chunk of stream) {
+          if (chunk.type === "content") {
+            content += chunk.delta;
+            events?.onContentChunk?.(chunk.delta);
+            yield chunk;
+          } else if (chunk.type === "reasoning") {
+            reasoningContent += chunk.delta;
+            events?.onReasoningChunk?.(chunk.delta);
+            yield chunk;
+          } else if (chunk.type === "tool_call") {
+            hasToolCall = true;
+            const { index, id, name, arguments: args } = chunk.toolCall!;
+            if (!toolCalls[index]) {
+              toolCalls[index] = {
+                id: "",
+                type: "function",
+                function: { name: "", arguments: "" },
+              };
+            }
+            if (id) toolCalls[index].id += id;
+            if (name) toolCalls[index].function.name += name;
+            if (args) toolCalls[index].function.arguments += args;
+            yield chunk;
+          } else if (chunk.type === "error") {
+            hasError = true;
+            events?.onLLMError?.(new Error(chunk.delta));
+            yield chunk;
           }
-          if (id) toolCalls[index].id += id;
-          if (name) toolCalls[index].function.name += name;
-          if (args) toolCalls[index].function.arguments += args;
-          yield chunk;
         }
-      }
 
-      const assistantMessage: Message = {
-        role: "assistant",
-        content,
-        ...(reasoningContent ? { reasoning_content: reasoningContent } : {}),
-        ...(hasToolCall ? { tool_calls: toolCalls } : {}),
-      };
-      this.thread.addMessages([assistantMessage]);
-      events?.onIterationEnd?.(iteration, assistantMessage);
+        if (hasError) {
+          continueLoop = false;
+          continue;
+        }
 
-      if (!hasToolCall) {
-        continueLoop = false;
-      } else {
-        for (const toolCall of toolCalls) {
-          const { name, arguments: args } = toolCall.function;
-          let result: string;
+        const assistantMessage: Message = {
+          role: "assistant",
+          content,
+          ...(reasoningContent ? { reasoning_content: reasoningContent } : {}),
+          ...(hasToolCall ? { tool_calls: toolCalls } : {}),
+        };
+        this.thread.addMessages([assistantMessage]);
+        events?.onIterationEnd?.(iteration, assistantMessage);
 
-          events?.onToolCallStart?.(toolCall);
-          try {
-            const parseArgs = JSON.parse(args);
-            result = await this.tools.execute(name, parseArgs);
-            events?.onToolCallEnd?.(toolCall, result);
-          } catch (err) {
-            const error = err instanceof Error ? err : new Error(String(err));
-            events?.onToolCallError?.(toolCall, error);
-            result = `工具执行错误: ${error.message}`;
+        if (!hasToolCall) {
+          continueLoop = false;
+        } else {
+          for (const toolCall of toolCalls) {
+            const { name, arguments: args } = toolCall.function;
+            let result: string;
+
+            events?.onToolCallStart?.(toolCall);
+            try {
+              const parseArgs = JSON.parse(args);
+              result = await this.tools.execute(name, parseArgs);
+              events?.onToolCallEnd?.(toolCall, result);
+            } catch (err) {
+              const error = err instanceof Error ? err : new Error(String(err));
+              events?.onToolCallError?.(toolCall, error);
+              result = `工具执行错误: ${error.message}`;
+            }
+
+            this.thread.addMessages([
+              {
+                role: "tool",
+                content: result,
+                tool_call_id: toolCall.id,
+              },
+            ]);
           }
-
-          this.thread.addMessages([
-            {
-              role: "tool",
-              content: result,
-              tool_call_id: toolCall.id,
-            },
-          ]);
         }
-      }
 
-      if (iteration >= MAX_ITERATIONS && hasToolCall) {
-        const stopMsg = "\n[到达最大请求次数，已停止]";
-        yield { type: "content", delta: stopMsg };
+        if (iteration >= MAX_ITERATIONS && hasToolCall) {
+          const stopMsg = "\n[到达最大请求次数，已停止]";
+          yield { type: "content", delta: stopMsg };
+          continueLoop = false;
+        }
+      } catch (e: any) {
+        const error = e instanceof Error ? e : new Error(String(e));
+        events?.onLLMError?.(error);
+        yield { type: "error", delta: `[Agent 错误] ${error.message}` };
         continueLoop = false;
       }
     }
   }
 
   // ========== Skill 上下文注入 ==========
-
   private async buildMessagesWithSkills(
     userQuery: string,
     events?: AgentEvents
@@ -295,7 +310,6 @@ export class Agent {
   }
 
   // ========== 状态管理 ==========
-
   getHistory(): Message[] {
     return this.thread.getMessages();
   }

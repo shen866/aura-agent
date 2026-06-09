@@ -1,7 +1,7 @@
 import type { Message, ChatCompletionOptions, ChatCompletionTool } from "../types/types.js";
 
 export interface StreamChunk {
-  type: "content" | "reasoning" | "tool_call";
+  type: "content" | "reasoning" | "tool_call" | "error";
   delta: string;
   toolCall?: {
     index: number;
