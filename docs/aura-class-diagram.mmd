@@ -1,0 +1,298 @@
+---
+title: Aura 当前系统核心类图
+config:
+  theme: neutral
+  class:
+    hideEmptyMembersBox: true
+---
+classDiagram
+direction TB
+
+namespace Web控制台 {
+  class AppManager {
+    -Host host
+    -RuntimeBuild runtime
+    +start() Promise~void~
+    +stop() Promise~void~
+    +sendChat(conversationId, rawContent) Promise~ConversationView~
+    +applyConfig(input) Promise~ApplyResult~
+    +listTasks(options) TaskSummary[]
+  }
+  class WebChannel {
+    +string id
+    +start(sink) Promise~void~
+    +send(message) Promise~void~
+  }
+  class ProviderRouterModel {
+    -Provider provider
+    -string model
+    +complete(request) Promise~string~
+  }
+}
+
+namespace Host运行时 {
+  class Host {
+    <<facade>>
+    -Router router
+    -TaskRegistry tasks
+    -TaskDispatcher dispatcher
+    -MessageIntake intake
+    -Outbox outbox
+    -HostStateCommitter state
+    -Map channels
+    -Map workers
+    +registerChannel(channel) void
+    +registerWorker(worker, profile) void
+    +start() Promise~void~
+    +stop() Promise~void~
+    +ingest(message) Promise~boolean~
+    +listTasks() TaskRecord[]
+    +cancelTask(taskId, reason) Promise~boolean~
+  }
+  class Task {
+    <<entity>>
+    -TaskRecord record
+    +snapshot() TaskRecord
+    +start(runId) void
+    +complete(runId, result) WorkerEvent
+    +fail(runId, error) WorkerEvent
+    +requestCancel(reason) CancelPlan
+    +scheduleRetry(delay, reason) boolean
+  }
+  class TaskRegistry {
+    -Map tasks
+    +create(input) Task
+    +get(taskId) Task
+    +snapshots() TaskRecord[]
+    +ready(now) Task[]
+    +recover() WorkerEvent[]
+  }
+  class TaskDispatcher {
+    -Map running
+    +start() void
+    +pause() void
+    +pump() void
+    +cancel(taskId, reason) Promise~boolean~
+    +idle() Promise~void~
+  }
+  class MessageIntake {
+    -BatchQueue queue
+    -InboundMessage[] inbox
+    +ingest(message) Promise~boolean~
+    +complete(messages) void
+    +snapshot() InboundMessage[]
+    +flush() Promise~void~
+  }
+  class Outbox {
+    -OutboundMessage[] messages
+    +queueTask(task, content, kind) void
+    +queueMessage(source, content, options) void
+    +flush() Promise~void~
+    +stop() void
+  }
+  class HostStateCommitter {
+    -HostStore store
+    +read() Promise~HostState~
+    +commit() Promise~void~
+    +idle() Promise~void~
+  }
+  class BatchQueue~T~ {
+    +push(item) void
+    +flush() Promise~void~
+    +close() Promise~void~
+  }
+  class Channel {
+    <<interface>>
+    +string id
+    +start(sink) Promise~void~
+    +send(message) Promise~void~
+    +stop() Promise~void~
+  }
+  class GitHubChannel {
+    +handleWebhook(request) Promise~WebhookResponse~
+    +send(message) Promise~void~
+  }
+  class GitLabChannel {
+    +handleWebhook(request) Promise~WebhookResponse~
+    +send(message) Promise~void~
+  }
+  class NotionChannel {
+    +pollNow() Promise~void~
+    +send(message) Promise~void~
+    +stop() Promise~void~
+  }
+  class HostStore {
+    <<interface>>
+    +read() Promise~HostState~
+    +write(state) Promise~void~
+  }
+  class FileHostStore {
+    -string filePath
+  }
+}
+
+namespace Router决策 {
+  class Router {
+    <<interface>>
+    +routeMessages(batch) Promise~RouteDecision[]~
+    +routeWorkerEvents(batch) Promise~WorkerAction[]~
+  }
+  class BatchRouter {
+    -RouteRule[] rules
+    -RouterConfig config
+    +routeMessages(batch) Promise~RouteDecision[]~
+    +routeWorkerEvents(batch) Promise~WorkerAction[]~
+  }
+  class RouterPlanner {
+    <<interface>>
+    +planMessages(batch) Promise~RouteDecision[]~
+    +planWorkerEvents(batch) Promise~WorkerAction[]~
+  }
+  class LlmRouterPlanner {
+    -RouterLanguageModel model
+    -number timeoutMs
+    +planMessages(batch) Promise~RouteDecision[]~
+    +planWorkerEvents(batch) Promise~WorkerAction[]~
+  }
+  class RouterLanguageModel {
+    <<interface>>
+    +complete(request) Promise~string~
+  }
+}
+
+namespace Worker执行 {
+  class Worker {
+    <<interface>>
+    +string id
+    +run(task, options) Promise~WorkerResult~
+    +subscribe(listener) Unsubscribe
+  }
+  class AgentWorker {
+    +string id
+    -AgentWorkerRuntime runtime
+    -WorkerProfile defaultProfile
+    +run(task, options) Promise~WorkerResult~
+    +subscribe(listener) Unsubscribe
+  }
+  class Agent {
+    -Thread thread
+    -Provider provider
+    -ToolSource tools
+    +chat(input, options, events) Promise~AgentResult~
+    +chatStream(input, options, events) AsyncGenerator~StreamChunk~
+    +getHistory() Message[]
+    +reset(keepSystemPrompt) void
+    +fork() Agent
+  }
+  class Thread {
+    -Message[] messages
+    +addMessages(messages) void
+    +getMessages() Message[]
+    +trim() void
+    +clear(keepSystem) void
+    +fork() Thread
+  }
+  class Provider {
+    <<interface>>
+    +chatStream(params) AsyncGenerator~StreamChunk~
+  }
+  class OpenAIProvider {
+    -OpenAI client
+  }
+}
+
+namespace 能力接口 {
+  class ToolSource {
+    <<interface>>
+    +getToolSchemas() ChatCompletionTool[]
+    +execute(name, args, context) Promise~string~
+  }
+  class PolicyToolSource {
+    -ToolSource source
+    -ToolPolicy tools
+    -MemoryPolicy memory
+  }
+  class ToolRegistry {
+    -Map tools
+    +register(definition, handler) void
+    +getToolSchemas() ChatCompletionTool[]
+    +execute(name, args, context) Promise~string~
+  }
+  class MemorySource {
+    <<interface>>
+    +getRelevantContext(query) Promise~string~
+  }
+  class MemoryManager {
+    -MemoryStorage storage
+    -MemoryEntry[] entries
+    +saveMemory(content) Promise~MemoryEntry~
+    +searchMemories(query) Promise~MemoryResult[]~
+  }
+  class SkillSource {
+    <<interface>>
+    +match(query) SkillInfo[]
+  }
+  class SkillRegistry {
+    -Map skills
+    +register(skill) void
+    +match(query) Skill[]
+  }
+}
+
+%% Web 与运行时生命周期
+AppManager o-- Host : runtime.host 0..1
+WebChannel ..|> Channel
+ProviderRouterModel ..|> RouterLanguageModel
+ProviderRouterModel o-- Provider : provider
+
+%% Host 门面与拆分后的内部协作者
+Host o-- Router : router
+Host o-- "0..*" Channel : channels
+Host o-- "0..*" Worker : workers
+Host *-- TaskRegistry : tasks
+Host *-- TaskDispatcher : dispatcher
+Host *-- MessageIntake : intake
+Host *-- Outbox : outbox
+Host *-- HostStateCommitter : state
+Host *-- "1" BatchQueue : workerEventQueue
+TaskRegistry *-- "0..*" Task : tasks
+TaskDispatcher o-- TaskRegistry : tasks
+TaskDispatcher o-- "0..*" Worker : workers
+MessageIntake *-- "1" BatchQueue : input queue
+Outbox ..> Channel : getChannel / send
+HostStateCommitter o-- HostStore : store
+GitHubChannel ..|> Channel
+GitLabChannel ..|> Channel
+NotionChannel ..|> Channel
+FileHostStore ..|> HostStore
+
+%% Router：规则优先，LLM 作为可选 planner
+BatchRouter ..|> Router
+BatchRouter o-- "0..1" RouterPlanner : planner
+LlmRouterPlanner ..|> RouterPlanner
+LlmRouterPlanner o-- RouterLanguageModel : model
+
+%% Worker：每次 run 创建独立 Agent
+AgentWorker ..|> Worker
+AgentWorker ..> Agent : 每次 run 创建
+AgentWorker ..> PolicyToolSource : 按 profile 创建
+AgentWorker o-- Provider : runtime.provider
+Agent *-- Thread : thread
+Agent o-- Provider : provider
+Agent o-- ToolSource : tools
+Agent o-- "0..1" MemorySource : memory
+Agent o-- "0..1" SkillSource : skills
+OpenAIProvider ..|> Provider
+
+%% 能力接口与实现
+PolicyToolSource ..|> ToolSource
+PolicyToolSource o-- ToolSource : source（装饰器）
+ToolRegistry ..|> ToolSource
+MemoryManager ..|> MemorySource
+SkillRegistry ..|> SkillSource : 结构化兼容
+
+note for Host "控制面门面；任务、调度、输入、输出和持久化由内部对象分别维护"
+note for Task "任务聚合：拥有状态机、运行不变量与恢复语义"
+note for HostStateCommitter "唯一持久化提交点：汇总快照并串行写入 HostStore"
+note for AgentWorker "每次运行使用独立 Agent / Thread，避免并发串用历史"
+note for BatchRouter "确定性规则与回退优先；LLM 仅产出待校验动作"

@@ -1,24 +1,22 @@
-{
-  "servers": [
-    {
-      "name": "filesystem",
-      "transport": "stdio",
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/Users/yourname/Desktop"]
-    },
-    {
-      "name": "github",
-      "transport": "stdio",
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
-      "env": {
-        "GITHUB_PERSONAL_ACCESS_TOKEN": "your_token_here"
-      }
-    },
-    {
-      "name": "http-server",
-      "transport": "http",
-      "url": "http://localhost:3000/mcp"
+[
+  {
+    "name": "filesystem",
+    "transport": "stdio",
+    "command": "npx",
+    "args": ["-y", "@modelcontextprotocol/server-filesystem", "/Users/you/Desktop"]
+  },
+  {
+    "name": "github",
+    "transport": "stdio",
+    "command": "npx",
+    "args": ["-y", "@modelcontextprotocol/server-github"],
+    "env": {
+      "GITHUB_PERSONAL_ACCESS_TOKEN": "your_token_here"
     }
-  ]
-}
+  },
+  {
+    "name": "http-server",
+    "transport": "http",
+    "url": "http://localhost:3000/mcp"
+  }
+]

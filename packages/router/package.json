@@ -1,0 +1,27 @@
+{
+  "name": "@aura/router",
+  "version": "1.0.0",
+  "description": "Aura 批次任务路由与 worker 事件决策 Agent",
+  "license": "ISC",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@aura/protocol": "*"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
+}

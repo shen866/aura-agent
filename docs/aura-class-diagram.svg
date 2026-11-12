@@ -1,0 +1,418 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3400" height="4050" viewBox="0 0 3400 4050">
+<rect width="3400" height="4050" fill="#F7F9FC"/>
+<text x="1700.0" y="52" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="46" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">Aura 当前系统核心类图</text>
+<text x="1700.0" y="105" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="24" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">依据当前 TypeScript 源代码核对 · Host 拆分后的核心运行时视图</text>
+<rect x="50" y="140" width="3300" height="460" rx="20" fill="#EAF1FC" stroke="#527CAC" stroke-width="3"/>
+<text x="74" y="168" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="32" font-weight="600" fill="#527CAC" text-anchor="start" dominant-baseline="middle">Web 控制台</text>
+<rect x="50" y="640" width="3300" height="1270" rx="20" fill="#EAF5EE" stroke="#53856A" stroke-width="3"/>
+<text x="74" y="668" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="32" font-weight="600" fill="#53856A" text-anchor="start" dominant-baseline="middle">Host 运行时（拆分后的门面与内部协作者）</text>
+<rect x="50" y="1940" width="3300" height="600" rx="20" fill="#F1EAF8" stroke="#8061A2" stroke-width="3"/>
+<text x="74" y="1968" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="32" font-weight="600" fill="#8061A2" text-anchor="start" dominant-baseline="middle">Router 决策</text>
+<rect x="50" y="2580" width="3300" height="720" rx="20" fill="#FFF3E3" stroke="#B57A32" stroke-width="3"/>
+<text x="74" y="2608" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="32" font-weight="600" fill="#B57A32" text-anchor="start" dominant-baseline="middle">Worker 与 Agent 核心</text>
+<rect x="50" y="3340" width="3300" height="630" rx="20" fill="#EBF4F6" stroke="#4F8390" stroke-width="3"/>
+<text x="74" y="3368" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="32" font-weight="600" fill="#4F8390" text-anchor="start" dominant-baseline="middle">工具、记忆与技能接口</text>
+<polyline points="1625.0,564 1625.0,710" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="1625.0,564 1614.0,582.0 1625.0,600.0 1636.0,582.0" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<rect x="1533.5" y="623.5" width="183" height="27" rx="6" fill="#F7F9FC"/>
+<text x="1625.0" y="637.0" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">runtime.host 0..1</text>
+<polyline points="460.0,438 460,620 320,620 320.0,710" fill="none" stroke="#64748B" stroke-width="3" stroke-dasharray="12 8" stroke-linejoin="round"/>
+<polygon points="320.0,710 307.0,682.0 333.0,682.0" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<polyline points="2880.0,438 2880,600 3340,600 3340,2190 2910,2190 2910.0,2240" fill="none" stroke="#64748B" stroke-width="3" stroke-dasharray="12 8" stroke-linejoin="round"/>
+<polygon points="2910.0,2240 2897.0,2212.0 2923.0,2212.0" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<polyline points="3110,329.0 3340,330 3340,2740 2840,2741.0" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="3110,329.0 3127.9520042351664,340.07815616158973 3145.9996597401737,329.15652025973986 3128.0476555050077,318.07836409815013" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<rect x="3290.5" y="1519.5" width="99" height="31" rx="6" fill="#F7F9FC"/>
+<text x="3340.0" y="1535.0" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">provider</text>
+<polyline points="1950,959.0 2210,1150 2210,1920 840,1920 840.0,1990" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="1950,959.0 1957.994027059937,978.5216682526109 1979.0128318266811,980.3132726111388 1971.018804766744,960.791604358528" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<polyline points="1300,959.0 1100,800 630,800 540,854.0" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="1300,959.0 1292.7554232207824,939.1879807366835 1271.8201227388624,936.5969975773955 1279.0646995180798,956.4090168407121" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<rect x="795.5" y="787.0" width="139" height="26" rx="6" fill="#F7F9FC"/>
+<text x="865.0" y="800.0" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">channels 0..*</text>
+<polyline points="1300,959.0 1100,959 1100,1320 300,1320 300,2560 280,2560 280.0,2700" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="1300,959.0 1282.0,948.0 1264.0,959.0 1282.0,970.0" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<rect x="234.0" y="1927.0" width="132" height="26" rx="6" fill="#F7F9FC"/>
+<text x="300.0" y="1940.0" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">workers 0..*</text>
+<polyline points="1625.0,1208 1130.0,1360" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="1625.0,1208 1604.5640014609392,1202.7683689243702 1590.585948406155,1218.5675471560899 1611.021946945216,1223.7991782317197" fill="#64748B" stroke="#64748B" stroke-width="3"/>
+<polyline points="1625.0,1208 1560.0,1360" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="1625.0,1208 1607.8085620814547,1220.2251569434834 1610.8451918615779,1241.1004744160027 1628.0366297801231,1228.8753174725193" fill="#64748B" stroke="#64748B" stroke-width="3"/>
+<polyline points="1625.0,1208 2000.0,1360" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="1625.0,1208 1637.5496002410198,1224.9560471157222 1658.363450817993,1221.5233187315598 1645.8138505769732,1204.5672716158376" fill="#64748B" stroke="#64748B" stroke-width="3"/>
+<polyline points="1625.0,1208 2410.0,1360" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="1625.0,1208 1640.5806698212061,1222.2212069784023 1660.3435326013232,1214.843588478218 1644.762862780117,1200.6223814998157" fill="#64748B" stroke="#64748B" stroke-width="3"/>
+<polyline points="1625.0,1208 2830.0,1360" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="1625.0,1208 1641.48183964177,1221.1662053008065 1660.7169649145758,1212.5053764871498 1644.2351252728058,1199.3391711863435" fill="#64748B" stroke="#64748B" stroke-width="3"/>
+<polyline points="1625.0,1208 1780,1260 1780,1600 2000,1600 2000.0,1640" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="1625.0,1208 1638.5665739454314,1224.153887191111 1659.1305151557742,1219.4502373425823 1645.5639412103426,1203.2963501514712" fill="#64748B" stroke="#64748B" stroke-width="3"/>
+<rect x="1678.0" y="1416.0" width="204" height="28" rx="6" fill="#F7F9FC"/>
+<text x="1780.0" y="1430.0" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">workerEventQueue</text>
+<polyline points="1130.0,1578 1130.0,1620" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="1130.0,1578 1119.0,1596.0 1130.0,1614.0 1141.0,1596.0" fill="#64748B" stroke="#64748B" stroke-width="3"/>
+<rect x="1077.5" y="1586.0" width="105" height="26" rx="6" fill="#F7F9FC"/>
+<text x="1130.0" y="1599.0" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">tasks 0..*</text>
+<polyline points="1360,1490.0 1310,1469.0" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="1360,1490.0 1347.6638794269736,1472.8880121199272 1326.808644198135,1476.0596305632166 1339.1447647711614,1493.1716184432894" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<rect x="1301.0" y="1466.5" width="68" height="26" rx="6" fill="#F7F9FC"/>
+<text x="1335.0" y="1479.5" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">tasks</text>
+<polyline points="1560.0,1360 1560,1330 500,1330 500,2823 480,2823.0" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="1560.0,1360 1571.0,1342.0 1560.0,1324.0 1549.0,1342.0" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<rect x="452.5" y="2063.5" width="95" height="26" rx="6" fill="#F7F9FC"/>
+<text x="500.0" y="2076.5" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">workers</text>
+<polyline points="2000.0,1578 2000.0,1640" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="2000.0,1578 1989.0,1596.0 2000.0,1614.0 2011.0,1596.0" fill="#64748B" stroke="#64748B" stroke-width="3"/>
+<rect x="1934.0" y="1593.5" width="132" height="31" rx="6" fill="#F7F9FC"/>
+<text x="2000.0" y="1609.0" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">input queue</text>
+<polyline points="2410.0,1578 2410,1895 65,1895 65,854 100,854.0" fill="none" stroke="#64748B" stroke-width="3" stroke-dasharray="12 8" stroke-linejoin="round"/>
+<polyline points="72.0,867.0 100,854.0 72.0,841.0" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="2830.0,1578 2770.0,1640" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="2830.0,1578 2809.5777907452784,1583.285202849122 2804.964828609422,1603.8696771035973 2825.387037864143,1598.584474254475" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<rect x="2766.5" y="1597.0" width="67" height="24" rx="6" fill="#F7F9FC"/>
+<text x="2800.0" y="1609.0" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">store</text>
+<polyline points="210.0,1100 210,1040 240,1040 320.0,998" fill="none" stroke="#64748B" stroke-width="3" stroke-dasharray="12 8" stroke-linejoin="round"/>
+<polygon points="320.0,998 301.25169940740653,1022.525521908611 289.16601803366865,999.5051764348244" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<polyline points="530.0,1100 530,1040 390,1040 320.0,998" fill="none" stroke="#64748B" stroke-width="3" stroke-dasharray="12 8" stroke-linejoin="round"/>
+<polygon points="320.0,998 350.6982467405091,1001.2584731177077 337.3213570993934,1023.5532891862339" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<polyline points="860.0,1100 860,1050 860,1030 500,1030 320.0,998" fill="none" stroke="#64748B" stroke-width="3" stroke-dasharray="12 8" stroke-linejoin="round"/>
+<polygon points="320.0,998 349.8431835693328,990.1016207708731 345.29231686667794,1015.7002459733067" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<polyline points="3020,1707.0 2960,1742.0" fill="none" stroke="#64748B" stroke-width="3" stroke-dasharray="12 8" stroke-linejoin="round"/>
+<polygon points="2960,1742.0 2977.635485893343,1716.6624855736459 2990.736132556969,1739.1207369970052" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<polyline points="840.0,2500 840.0,1990" fill="none" stroke="#64748B" stroke-width="3" stroke-dasharray="12 8" stroke-linejoin="round"/>
+<polygon points="840.0,1990 853.0,2018.0 827.0,2018.0" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<polyline points="1080,2370.0 1530,2360 1530,2100 1800,2092.0" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="1080,2370.0 1098.2399413111057,2380.5973836850153 1115.991114401938,2369.2001974577347 1097.7511730908323,2358.60281377272" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<rect x="1239.0" y="2349.0" width="132" height="32" rx="6" fill="#F7F9FC"/>
+<text x="1305.0" y="2365.0" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">planner 0..1</text>
+<polyline points="2020.0,2500 2010.0,1990" fill="none" stroke="#64748B" stroke-width="3" stroke-dasharray="12 8" stroke-linejoin="round"/>
+<polygon points="2010.0,1990 2023.5464157797019,2017.7397660322406 1997.551412416627,2018.249471980536" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<polyline points="2240,2370.0 2700,2321.0" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="2240,2370.0 2259.0638863912254,2379.0315134757384 2275.797478017768,2366.186790385064 2256.733591626542,2357.155276909325" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<rect x="2432.0" y="2332.5" width="76" height="26" rx="6" fill="#F7F9FC"/>
+<text x="2470.0" y="2345.5" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">model</text>
+<polyline points="570,2831.0 480,2823.0" fill="none" stroke="#64748B" stroke-width="3" stroke-dasharray="12 8" stroke-linejoin="round"/>
+<polygon points="480,2823.0 509.04105121308453,2812.530169798941 506.7390166657059,2838.428058456951" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<polyline points="1110,2831.0 1270,2853.0" fill="none" stroke="#64748B" stroke-width="3" stroke-dasharray="12 8" stroke-linejoin="round"/>
+<polyline points="1240.4901540581081,2862.0647113845844 1270,2853.0 1244.031830910555,2836.3070615486067" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<rect x="1119.5" y="2827.0" width="141" height="30" rx="6" fill="#F7F9FC"/>
+<text x="1190.0" y="2842.0" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">每次 run 创建</text>
+<polyline points="840.0,2680 840,2610 2100,2610 2620,2610 2620.0,2660" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="840.0,2680 851.0,2662.0 840.0,2644.0 829.0,2662.0" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<rect x="1379.5" y="2594.5" width="181" height="31" rx="6" fill="#F7F9FC"/>
+<text x="1470.0" y="2610.0" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">runtime.provider</text>
+<polyline points="1550.0,3046 1550.0,3080" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="1550.0,3046 1539.0,3064.0 1550.0,3082.0 1561.0,3064.0" fill="#64748B" stroke="#64748B" stroke-width="3"/>
+<rect x="1510.0" y="3050.0" width="80" height="26" rx="6" fill="#F7F9FC"/>
+<text x="1550.0" y="3063.0" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">thread</text>
+<polyline points="1830,2853.0 2400,2741.0" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="1830,2853.0 1849.7831189407475,2860.3231280868376 1865.3245388673984,2846.0590379769324 1845.5414199266506,2838.7359098900943" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<rect x="2065.5" y="2781.5" width="99" height="31" rx="6" fill="#F7F9FC"/>
+<text x="2115.0" y="2797.0" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">provider</text>
+<polyline points="840.0,2982 840,3290 840,3370 815,3370 815.0,3420" fill="none" stroke="#64748B" stroke-width="3" stroke-dasharray="12 8" stroke-linejoin="round"/>
+<polyline points="802.0,3392.0 815.0,3420 828.0,3392.0" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<rect x="763.5" y="3119.5" width="153" height="33" rx="6" fill="#F7F9FC"/>
+<text x="840.0" y="3136.0" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">按 profile 创建</text>
+<polyline points="1270,2853.0 1210,2850 1210,3380 315,3380 315.0,3420" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="1270,2853.0 1252.5717716865815,2841.1148471673537 1234.0449158003976,2851.20224579002 1251.473144113816,2863.0873986226666" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<rect x="730.5" y="3367.0" width="64" height="26" rx="6" fill="#F7F9FC"/>
+<text x="762.5" y="3380.0" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">tools</text>
+<polyline points="1830,2853.0 1900,2850 1900,3380 1900.0,3420" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="1830,2853.0 1848.4544883470319,2863.219190762935 1865.966984249436,2851.4585578178812 1847.512495902404,2841.2393670549463" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<rect x="1830.0" y="3099.0" width="140" height="32" rx="6" fill="#F7F9FC"/>
+<text x="1900.0" y="3115.0" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">memory 0..1</text>
+<polyline points="1830,2853.0 2020,2870 2020,3310 2475,3310 2475.0,3420" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="1830,2853.0 1846.948085416191,2865.5603503424663 1865.8567597422661,2856.208236397992 1848.9086743260752,2843.647886055526" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<rect x="2194.5" y="3296.5" width="106" height="27" rx="6" fill="#F7F9FC"/>
+<text x="2247.5" y="3310.0" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">skills 0..1</text>
+<polyline points="2560.0,3034 2620.0,2660" fill="none" stroke="#64748B" stroke-width="3" stroke-dasharray="12 8" stroke-linejoin="round"/>
+<polygon points="2620.0,2660 2628.400604625574,2689.7057206935765 2602.7288637773395,2685.587259594929" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<polyline points="620,3529.0 530,3522.0" fill="none" stroke="#64748B" stroke-width="3" stroke-dasharray="12 8" stroke-linejoin="round"/>
+<polygon points="530,3522.0 558.9237575810557,3511.2103638897174 556.9076243448428,3537.132076926742" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<polyline points="815.0,3420 815,3380 650,3380 650,3520 530,3522.0" fill="none" stroke="#64748B" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="815.0,3420 826.0,3402.0 815.0,3384.0 804.0,3402.0" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<rect x="641.0" y="3365.0" width="183" height="30" rx="6" fill="#F7F9FC"/>
+<text x="732.5" y="3380.0" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">source（装饰器）</text>
+<polyline points="1320.0,3420 1320,3380 600,3380 400,3380 315.0,3420" fill="none" stroke="#64748B" stroke-width="3" stroke-dasharray="12 8" stroke-linejoin="round"/>
+<polygon points="315.0,3420 334.7995621893394,3396.31503985415 345.8702851339163,3419.8403261113763" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<polyline points="1910.0,3910 1900.0,3420" fill="none" stroke="#64748B" stroke-width="3" stroke-dasharray="12 8" stroke-linejoin="round"/>
+<polygon points="1900.0,3420 1913.5686032505753,3447.728920026364 1887.5740159705258,3448.259421807589" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<polyline points="2490.0,3868 2475.0,3420" fill="none" stroke="#64748B" stroke-width="3" stroke-dasharray="12 8" stroke-linejoin="round"/>
+<polygon points="2475.0,3420 2488.9296942181154,3447.549294346494 2462.944255676698,3448.419342511944" fill="#F7F9FC" stroke="#64748B" stroke-width="3"/>
+<rect x="2425.5" y="3629.0" width="114" height="30" rx="6" fill="#F7F9FC"/>
+<text x="2482.5" y="3644.0" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">结构化兼容</text>
+<rect x="1325" y="220" width="600" height="344" fill="white" stroke="#527CAC" stroke-width="3"/>
+<rect x="1325" y="220" width="600" height="58" fill="#EAF1FC"/>
+<text x="1625.0" y="248" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">AppManager</text>
+<line x1="1325" y1="283" x2="1925" y2="283" stroke="#527CAC" stroke-width="2"/>
+<text x="1341" y="303" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- host: Host</text>
+<text x="1341" y="345" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- runtime: RuntimeBuild</text>
+<line x1="1325" y1="367" x2="1925" y2="367" stroke="#527CAC" stroke-width="2"/>
+<text x="1341" y="387" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ start() / stop(): Promise&lt;void&gt;</text>
+<text x="1341" y="429" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ sendChat(...): Promise&lt;ConversationView&gt;</text>
+<text x="1341" y="471" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ applyConfig(input): Promise&lt;ApplyResult&gt;</text>
+<text x="1341" y="513" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ listTasks(options): TaskSummary[]</text>
+<rect x="250" y="220" width="420" height="218" fill="white" stroke="#527CAC" stroke-width="3"/>
+<rect x="250" y="220" width="420" height="58" fill="#EAF1FC"/>
+<text x="460.0" y="248" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">WebChannel</text>
+<line x1="250" y1="283" x2="670" y2="283" stroke="#527CAC" stroke-width="2"/>
+<text x="266" y="303" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ id = &quot;web&quot;</text>
+<line x1="250" y1="325" x2="670" y2="325" stroke="#527CAC" stroke-width="2"/>
+<text x="266" y="345" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ start(sink): Promise&lt;void&gt;</text>
+<text x="266" y="387" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ send(message)</text>
+<rect x="2650" y="220" width="460" height="218" fill="white" stroke="#527CAC" stroke-width="3"/>
+<rect x="2650" y="220" width="460" height="58" fill="#EAF1FC"/>
+<text x="2880.0" y="248" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">ProviderRouterModel</text>
+<line x1="2650" y1="283" x2="3110" y2="283" stroke="#527CAC" stroke-width="2"/>
+<text x="2666" y="303" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- provider: Provider</text>
+<text x="2666" y="345" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- model: string</text>
+<line x1="2650" y1="367" x2="3110" y2="367" stroke="#527CAC" stroke-width="2"/>
+<text x="2666" y="387" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ complete(request): Promise&lt;string&gt;</text>
+<rect x="1300" y="710" width="650" height="498" fill="white" stroke="#53856A" stroke-width="3"/>
+<rect x="1300" y="710" width="650" height="86" fill="#EAF5EE"/>
+<text x="1625.0" y="728" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="21" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">&lt;&lt;facade&gt;&gt;</text>
+<text x="1625.0" y="768" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">Host</text>
+<line x1="1300" y1="801" x2="1950" y2="801" stroke="#53856A" stroke-width="2"/>
+<text x="1316" y="821" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- router: Router</text>
+<text x="1316" y="863" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- tasks: TaskRegistry</text>
+<text x="1316" y="905" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- dispatcher: TaskDispatcher</text>
+<text x="1316" y="947" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- intake / outbox</text>
+<text x="1316" y="989" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- state: HostStateCommitter</text>
+<line x1="1300" y1="1011" x2="1950" y2="1011" stroke="#53856A" stroke-width="2"/>
+<text x="1316" y="1031" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ registerChannel / registerWorker(...)</text>
+<text x="1316" y="1073" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ start() / stop(): Promise&lt;void&gt;</text>
+<text x="1316" y="1115" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ ingest(message): Promise&lt;boolean&gt;</text>
+<text x="1316" y="1157" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ listTasks() / cancelTask(...)</text>
+<rect x="950" y="1360" width="360" height="218" fill="white" stroke="#53856A" stroke-width="3"/>
+<rect x="950" y="1360" width="360" height="58" fill="#EAF5EE"/>
+<text x="1130.0" y="1388" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">TaskRegistry</text>
+<line x1="950" y1="1423" x2="1310" y2="1423" stroke="#53856A" stroke-width="2"/>
+<text x="966" y="1443" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ create(input): Task</text>
+<text x="966" y="1485" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ get() / snapshots()</text>
+<text x="966" y="1527" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ ready() / recover()</text>
+<rect x="1360" y="1360" width="400" height="260" fill="white" stroke="#53856A" stroke-width="3"/>
+<rect x="1360" y="1360" width="400" height="58" fill="#EAF5EE"/>
+<text x="1560.0" y="1388" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">TaskDispatcher</text>
+<line x1="1360" y1="1423" x2="1760" y2="1423" stroke="#53856A" stroke-width="2"/>
+<text x="1376" y="1443" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ start() / pause()</text>
+<text x="1376" y="1485" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ pump(): void</text>
+<text x="1376" y="1527" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ cancel(taskId, reason)</text>
+<text x="1376" y="1569" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ idle(): Promise&lt;void&gt;</text>
+<rect x="1810" y="1360" width="380" height="218" fill="white" stroke="#53856A" stroke-width="3"/>
+<rect x="1810" y="1360" width="380" height="58" fill="#EAF5EE"/>
+<text x="2000.0" y="1388" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">MessageIntake</text>
+<line x1="1810" y1="1423" x2="2190" y2="1423" stroke="#53856A" stroke-width="2"/>
+<text x="1826" y="1443" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ ingest(message)</text>
+<text x="1826" y="1485" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ complete(messages): void</text>
+<text x="1826" y="1527" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ snapshot() / flush()</text>
+<rect x="2240" y="1360" width="340" height="218" fill="white" stroke="#53856A" stroke-width="3"/>
+<rect x="2240" y="1360" width="340" height="58" fill="#EAF5EE"/>
+<text x="2410.0" y="1388" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">Outbox</text>
+<line x1="2240" y1="1423" x2="2580" y2="1423" stroke="#53856A" stroke-width="2"/>
+<text x="2256" y="1443" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ queueTask(...)</text>
+<text x="2256" y="1485" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ queueMessage(...)</text>
+<text x="2256" y="1527" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ flush() / stop()</text>
+<rect x="2630" y="1360" width="400" height="218" fill="white" stroke="#53856A" stroke-width="3"/>
+<rect x="2630" y="1360" width="400" height="58" fill="#EAF5EE"/>
+<text x="2830.0" y="1388" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">HostStateCommitter</text>
+<line x1="2630" y1="1423" x2="3030" y2="1423" stroke="#53856A" stroke-width="2"/>
+<text x="2646" y="1443" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ read(): Promise&lt;HostState&gt;</text>
+<text x="2646" y="1485" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ commit(): Promise&lt;void&gt;</text>
+<text x="2646" y="1527" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ idle(): Promise&lt;void&gt;</text>
+<rect x="950" y="1620" width="360" height="260" fill="white" stroke="#53856A" stroke-width="3"/>
+<rect x="950" y="1620" width="360" height="58" fill="#EAF5EE"/>
+<text x="1130.0" y="1648" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">Task</text>
+<line x1="950" y1="1683" x2="1310" y2="1683" stroke="#53856A" stroke-width="2"/>
+<text x="966" y="1703" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- record: TaskRecord</text>
+<line x1="950" y1="1725" x2="1310" y2="1725" stroke="#53856A" stroke-width="2"/>
+<text x="966" y="1745" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ snapshot(): TaskRecord</text>
+<text x="966" y="1787" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ start() / complete() / fail()</text>
+<text x="966" y="1829" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ requestCancel()</text>
+<rect x="1810" y="1640" width="380" height="176" fill="white" stroke="#53856A" stroke-width="3"/>
+<rect x="1810" y="1640" width="380" height="58" fill="#EAF5EE"/>
+<text x="2000.0" y="1668" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">BatchQueue</text>
+<line x1="1810" y1="1703" x2="2190" y2="1703" stroke="#53856A" stroke-width="2"/>
+<text x="1826" y="1723" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ push(item): void</text>
+<text x="1826" y="1765" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ flush() / close(): Promise&lt;void&gt;</text>
+<rect x="2580" y="1640" width="380" height="204" fill="white" stroke="#53856A" stroke-width="3"/>
+<rect x="2580" y="1640" width="380" height="86" fill="#EAF5EE"/>
+<text x="2770.0" y="1658" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="21" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">&lt;&lt;interface&gt;&gt;</text>
+<text x="2770.0" y="1698" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">HostStore</text>
+<line x1="2580" y1="1731" x2="2960" y2="1731" stroke="#53856A" stroke-width="2"/>
+<text x="2596" y="1751" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ read(): Promise&lt;HostState&gt;</text>
+<text x="2596" y="1793" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ write(state): Promise&lt;void&gt;</text>
+<rect x="3020" y="1640" width="280" height="134" fill="white" stroke="#53856A" stroke-width="3"/>
+<rect x="3020" y="1640" width="280" height="58" fill="#EAF5EE"/>
+<text x="3160.0" y="1668" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">FileHostStore</text>
+<line x1="3020" y1="1703" x2="3300" y2="1703" stroke="#53856A" stroke-width="2"/>
+<text x="3036" y="1723" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- filePath: string</text>
+<rect x="100" y="710" width="440" height="288" fill="white" stroke="#53856A" stroke-width="3"/>
+<rect x="100" y="710" width="440" height="86" fill="#EAF5EE"/>
+<text x="320.0" y="728" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="21" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">&lt;&lt;interface&gt;&gt;</text>
+<text x="320.0" y="768" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">Channel</text>
+<line x1="100" y1="801" x2="540" y2="801" stroke="#53856A" stroke-width="2"/>
+<text x="116" y="821" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ id: string</text>
+<line x1="100" y1="843" x2="540" y2="843" stroke="#53856A" stroke-width="2"/>
+<text x="116" y="863" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ start(sink): Promise&lt;void&gt;</text>
+<text x="116" y="905" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ send(message)</text>
+<text x="116" y="947" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ stop?(): Promise&lt;void&gt;</text>
+<rect x="70" y="1100" width="280" height="176" fill="white" stroke="#53856A" stroke-width="3"/>
+<rect x="70" y="1100" width="280" height="58" fill="#EAF5EE"/>
+<text x="210.0" y="1128" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">GitHubChannel</text>
+<line x1="70" y1="1163" x2="350" y2="1163" stroke="#53856A" stroke-width="2"/>
+<text x="86" y="1183" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ handleWebhook(request)</text>
+<text x="86" y="1225" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ send(message)</text>
+<rect x="390" y="1100" width="280" height="176" fill="white" stroke="#53856A" stroke-width="3"/>
+<rect x="390" y="1100" width="280" height="58" fill="#EAF5EE"/>
+<text x="530.0" y="1128" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">GitLabChannel</text>
+<line x1="390" y1="1163" x2="670" y2="1163" stroke="#53856A" stroke-width="2"/>
+<text x="406" y="1183" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ handleWebhook(request)</text>
+<text x="406" y="1225" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ send(message)</text>
+<rect x="710" y="1100" width="300" height="218" fill="white" stroke="#53856A" stroke-width="3"/>
+<rect x="710" y="1100" width="300" height="58" fill="#EAF5EE"/>
+<text x="860.0" y="1128" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">NotionChannel</text>
+<line x1="710" y1="1163" x2="1010" y2="1163" stroke="#53856A" stroke-width="2"/>
+<text x="726" y="1183" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ pollNow(): Promise&lt;void&gt;</text>
+<text x="726" y="1225" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ send(message)</text>
+<text x="726" y="1267" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ stop(): Promise&lt;void&gt;</text>
+<rect x="600" y="1990" width="480" height="204" fill="white" stroke="#8061A2" stroke-width="3"/>
+<rect x="600" y="1990" width="480" height="86" fill="#F1EAF8"/>
+<text x="840.0" y="2008" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="21" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">&lt;&lt;interface&gt;&gt;</text>
+<text x="840.0" y="2048" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">Router</text>
+<line x1="600" y1="2081" x2="1080" y2="2081" stroke="#8061A2" stroke-width="2"/>
+<text x="616" y="2101" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ routeMessages(batch)</text>
+<text x="616" y="2143" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ routeWorkerEvents(batch)</text>
+<rect x="600" y="2240" width="480" height="260" fill="white" stroke="#8061A2" stroke-width="3"/>
+<rect x="600" y="2240" width="480" height="58" fill="#F1EAF8"/>
+<text x="840.0" y="2268" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">BatchRouter</text>
+<line x1="600" y1="2303" x2="1080" y2="2303" stroke="#8061A2" stroke-width="2"/>
+<text x="616" y="2323" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- rules: RouteRule[]</text>
+<text x="616" y="2365" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- config: RouterConfig</text>
+<line x1="600" y1="2387" x2="1080" y2="2387" stroke="#8061A2" stroke-width="2"/>
+<text x="616" y="2407" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ routeMessages(batch)</text>
+<text x="616" y="2449" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ routeWorkerEvents(batch)</text>
+<rect x="1800" y="1990" width="420" height="204" fill="white" stroke="#8061A2" stroke-width="3"/>
+<rect x="1800" y="1990" width="420" height="86" fill="#F1EAF8"/>
+<text x="2010.0" y="2008" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="21" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">&lt;&lt;interface&gt;&gt;</text>
+<text x="2010.0" y="2048" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">RouterPlanner</text>
+<line x1="1800" y1="2081" x2="2220" y2="2081" stroke="#8061A2" stroke-width="2"/>
+<text x="1816" y="2101" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ planMessages(batch)?</text>
+<text x="1816" y="2143" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ planWorkerEvents(batch)?</text>
+<rect x="1800" y="2240" width="440" height="260" fill="white" stroke="#8061A2" stroke-width="3"/>
+<rect x="1800" y="2240" width="440" height="58" fill="#F1EAF8"/>
+<text x="2020.0" y="2268" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">LlmRouterPlanner</text>
+<line x1="1800" y1="2303" x2="2240" y2="2303" stroke="#8061A2" stroke-width="2"/>
+<text x="1816" y="2323" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- model: RouterLanguageModel</text>
+<text x="1816" y="2365" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- timeoutMs: number</text>
+<line x1="1800" y1="2387" x2="2240" y2="2387" stroke="#8061A2" stroke-width="2"/>
+<text x="1816" y="2407" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ planMessages(batch)</text>
+<text x="1816" y="2449" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ planWorkerEvents(batch)</text>
+<rect x="2700" y="2240" width="420" height="162" fill="white" stroke="#8061A2" stroke-width="3"/>
+<rect x="2700" y="2240" width="420" height="86" fill="#F1EAF8"/>
+<text x="2910.0" y="2258" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="21" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">&lt;&lt;interface&gt;&gt;</text>
+<text x="2910.0" y="2298" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">RouterLanguageModel</text>
+<line x1="2700" y1="2331" x2="3120" y2="2331" stroke="#8061A2" stroke-width="2"/>
+<text x="2716" y="2351" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ complete(request): Promise&lt;string&gt;</text>
+<rect x="80" y="2700" width="400" height="246" fill="white" stroke="#B57A32" stroke-width="3"/>
+<rect x="80" y="2700" width="400" height="86" fill="#FFF3E3"/>
+<text x="280.0" y="2718" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="21" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">&lt;&lt;interface&gt;&gt;</text>
+<text x="280.0" y="2758" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">Worker</text>
+<line x1="80" y1="2791" x2="480" y2="2791" stroke="#B57A32" stroke-width="2"/>
+<text x="96" y="2811" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ id: string</text>
+<line x1="80" y1="2833" x2="480" y2="2833" stroke="#B57A32" stroke-width="2"/>
+<text x="96" y="2853" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ run(task, options)</text>
+<text x="96" y="2895" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ subscribe(listener): Unsubscribe</text>
+<rect x="570" y="2680" width="540" height="302" fill="white" stroke="#B57A32" stroke-width="3"/>
+<rect x="570" y="2680" width="540" height="58" fill="#FFF3E3"/>
+<text x="840.0" y="2708" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">AgentWorker</text>
+<line x1="570" y1="2743" x2="1110" y2="2743" stroke="#B57A32" stroke-width="2"/>
+<text x="586" y="2763" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ id: string</text>
+<text x="586" y="2805" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- runtime: AgentWorkerRuntime</text>
+<text x="586" y="2847" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- defaultProfile: WorkerProfile</text>
+<line x1="570" y1="2869" x2="1110" y2="2869" stroke="#B57A32" stroke-width="2"/>
+<text x="586" y="2889" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ run(task, options)</text>
+<text x="586" y="2931" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ subscribe(listener): Unsubscribe</text>
+<rect x="1270" y="2660" width="560" height="386" fill="white" stroke="#B57A32" stroke-width="3"/>
+<rect x="1270" y="2660" width="560" height="58" fill="#FFF3E3"/>
+<text x="1550.0" y="2688" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">Agent</text>
+<line x1="1270" y1="2723" x2="1830" y2="2723" stroke="#B57A32" stroke-width="2"/>
+<text x="1286" y="2743" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- thread: Thread</text>
+<text x="1286" y="2785" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- provider: Provider</text>
+<text x="1286" y="2827" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- tools: ToolSource</text>
+<line x1="1270" y1="2849" x2="1830" y2="2849" stroke="#B57A32" stroke-width="2"/>
+<text x="1286" y="2869" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ chat(...): Promise&lt;AgentResult&gt;</text>
+<text x="1286" y="2911" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ chatStream(...): AsyncGenerator&lt;StreamChunk&gt;</text>
+<text x="1286" y="2953" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ getHistory() / reset(...)</text>
+<text x="1286" y="2995" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ fork(): Agent</text>
+<rect x="1270" y="3080" width="560" height="218" fill="white" stroke="#B57A32" stroke-width="3"/>
+<rect x="1270" y="3080" width="560" height="58" fill="#FFF3E3"/>
+<text x="1550.0" y="3108" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">Thread</text>
+<line x1="1270" y1="3143" x2="1830" y2="3143" stroke="#B57A32" stroke-width="2"/>
+<text x="1286" y="3163" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- messages: Message[]</text>
+<line x1="1270" y1="3185" x2="1830" y2="3185" stroke="#B57A32" stroke-width="2"/>
+<text x="1286" y="3205" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ addMessages() / getMessages()</text>
+<text x="1286" y="3247" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ trim() / clear() / fork()</text>
+<rect x="2400" y="2660" width="440" height="162" fill="white" stroke="#B57A32" stroke-width="3"/>
+<rect x="2400" y="2660" width="440" height="86" fill="#FFF3E3"/>
+<text x="2620.0" y="2678" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="21" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">&lt;&lt;interface&gt;&gt;</text>
+<text x="2620.0" y="2718" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">Provider</text>
+<line x1="2400" y1="2751" x2="2840" y2="2751" stroke="#B57A32" stroke-width="2"/>
+<text x="2416" y="2771" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ chatStream(params): AsyncGenerator</text>
+<rect x="2400" y="2900" width="320" height="134" fill="white" stroke="#B57A32" stroke-width="3"/>
+<rect x="2400" y="2900" width="320" height="58" fill="#FFF3E3"/>
+<text x="2560.0" y="2928" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">OpenAIProvider</text>
+<line x1="2400" y1="2963" x2="2720" y2="2963" stroke="#B57A32" stroke-width="2"/>
+<text x="2416" y="2983" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- client: OpenAI</text>
+<rect x="100" y="3420" width="430" height="204" fill="white" stroke="#4F8390" stroke-width="3"/>
+<rect x="100" y="3420" width="430" height="86" fill="#EBF4F6"/>
+<text x="315.0" y="3438" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="21" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">&lt;&lt;interface&gt;&gt;</text>
+<text x="315.0" y="3478" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">ToolSource</text>
+<line x1="100" y1="3511" x2="530" y2="3511" stroke="#4F8390" stroke-width="2"/>
+<text x="116" y="3531" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ getToolSchemas()</text>
+<text x="116" y="3573" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ execute(name, args, context)</text>
+<rect x="620" y="3420" width="390" height="218" fill="white" stroke="#4F8390" stroke-width="3"/>
+<rect x="620" y="3420" width="390" height="58" fill="#EBF4F6"/>
+<text x="815.0" y="3448" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">PolicyToolSource</text>
+<line x1="620" y1="3483" x2="1010" y2="3483" stroke="#4F8390" stroke-width="2"/>
+<text x="636" y="3503" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- source: ToolSource</text>
+<text x="636" y="3545" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- tools: ToolPolicy</text>
+<text x="636" y="3587" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- memory: MemoryPolicy</text>
+<rect x="1100" y="3420" width="440" height="218" fill="white" stroke="#4F8390" stroke-width="3"/>
+<rect x="1100" y="3420" width="440" height="58" fill="#EBF4F6"/>
+<text x="1320.0" y="3448" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">ToolRegistry</text>
+<line x1="1100" y1="3483" x2="1540" y2="3483" stroke="#4F8390" stroke-width="2"/>
+<text x="1116" y="3503" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- tools: Map</text>
+<line x1="1100" y1="3525" x2="1540" y2="3525" stroke="#4F8390" stroke-width="2"/>
+<text x="1116" y="3545" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ register(definition, handler): void</text>
+<text x="1116" y="3587" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ getToolSchemas() / execute(...)</text>
+<rect x="1700" y="3420" width="400" height="162" fill="white" stroke="#4F8390" stroke-width="3"/>
+<rect x="1700" y="3420" width="400" height="86" fill="#EBF4F6"/>
+<text x="1900.0" y="3438" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="21" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">&lt;&lt;interface&gt;&gt;</text>
+<text x="1900.0" y="3478" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">MemorySource</text>
+<line x1="1700" y1="3511" x2="2100" y2="3511" stroke="#4F8390" stroke-width="2"/>
+<text x="1716" y="3531" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ getRelevantContext(query)</text>
+<rect x="1700" y="3650" width="420" height="260" fill="white" stroke="#4F8390" stroke-width="3"/>
+<rect x="1700" y="3650" width="420" height="58" fill="#EBF4F6"/>
+<text x="1910.0" y="3678" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">MemoryManager</text>
+<line x1="1700" y1="3713" x2="2120" y2="3713" stroke="#4F8390" stroke-width="2"/>
+<text x="1716" y="3733" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- storage: MemoryStorage</text>
+<text x="1716" y="3775" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- entries: MemoryEntry[]</text>
+<line x1="1700" y1="3797" x2="2120" y2="3797" stroke="#4F8390" stroke-width="2"/>
+<text x="1716" y="3817" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ saveMemory(content)</text>
+<text x="1716" y="3859" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ searchMemories(query)</text>
+<rect x="2300" y="3420" width="350" height="162" fill="white" stroke="#4F8390" stroke-width="3"/>
+<rect x="2300" y="3420" width="350" height="86" fill="#EBF4F6"/>
+<text x="2475.0" y="3438" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="21" font-weight="normal" fill="#536175" text-anchor="middle" dominant-baseline="middle">&lt;&lt;interface&gt;&gt;</text>
+<text x="2475.0" y="3478" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">SkillSource</text>
+<line x1="2300" y1="3511" x2="2650" y2="3511" stroke="#4F8390" stroke-width="2"/>
+<text x="2316" y="3531" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ match(query): SkillInfo[]</text>
+<rect x="2300" y="3650" width="380" height="218" fill="white" stroke="#4F8390" stroke-width="3"/>
+<rect x="2300" y="3650" width="380" height="58" fill="#EBF4F6"/>
+<text x="2490.0" y="3678" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="28" font-weight="600" fill="#172033" text-anchor="middle" dominant-baseline="middle">SkillRegistry</text>
+<line x1="2300" y1="3713" x2="2680" y2="3713" stroke="#4F8390" stroke-width="2"/>
+<text x="2316" y="3733" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">- skills: Map</text>
+<line x1="2300" y1="3755" x2="2680" y2="3755" stroke="#4F8390" stroke-width="2"/>
+<text x="2316" y="3775" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ register(skill): void</text>
+<text x="2316" y="3817" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="20" font-weight="normal" fill="#172033" text-anchor="start" dominant-baseline="middle">+ match(query): Skill[]</text>
+<text x="70" y="4010" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="22" font-weight="normal" fill="#536175" text-anchor="start" dominant-baseline="middle">图例：  ..|&gt; 接口实现     ◆— 组合     ◇— 聚合/注入     ..&gt; 创建或使用依赖</text>
+<text x="3330" y="4010" font-family="Hiragino Sans GB, PingFang SC, Microsoft YaHei, Arial, sans-serif" font-size="22" font-weight="normal" fill="#536175" text-anchor="end" dominant-baseline="middle">说明：Anthropic / Gemini 为未实现占位类，未纳入核心图</text>
+</svg>
